@@ -13,7 +13,7 @@ bool isPrime(int iNumber)
 {
     int iLimit = sqrt(iNumber);
 
-    for (int iCount = 1; iCount < iLimit; iCount++)
+    for (int iCount = 2; iCount <= iLimit; iCount++)
     {
         if(iNumber % iCount == 0) {
             return false;
@@ -24,10 +24,10 @@ bool isPrime(int iNumber)
 }
 
 
-void main()
+int main()
 {
     if(isPrime(10))
         printf("Prime");
-    else 
+	else
 		printf("Not prime");
 }
