@@ -9,6 +9,7 @@
 #include <stdbool.h>
 #include <math.h>
 
+// Check if iNumber is a prime number
 bool isPrime(int iNumber)
 {
     int iLimit = sqrt(iNumber);
