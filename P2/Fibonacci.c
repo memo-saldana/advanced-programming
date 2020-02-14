@@ -27,7 +27,7 @@ void fibonacci(int iAmount)
     iFirst = 0;
     iSecond = 1;
 
-    for ( iCount = 3; iCount <= iAmount; iCount++)
+    for (iCount = 3; iCount <= iAmount; iCount++)
     {
 		iCurrentValue = iFirst + iSecond;
 		printf(" %d ", iCurrentValue);
