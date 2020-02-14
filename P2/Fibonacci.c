@@ -41,7 +41,7 @@ int main()
 {
 	int iAmount;
 
-    printf( "Input amount of numbers to print.\n" );
+    printf("Input amount of numbers to print.\n");
 	scanf("%d", &iAmount);
 	fibonacci(iAmount);
     
