@@ -6,9 +6,8 @@
 // Show the Fibonacci sequence up to a given amount of numbers, without recursion
 
 #include <stdio.h>
-// #include <iostream.h>
-// using namespace std;
 
+// Calculates the fibonacci series up to the number given by iAmount
 void fibonacci(int iAmount)
 {
     int iFirst, iSecond, iCount, iCurrentValue;
@@ -37,6 +36,7 @@ void fibonacci(int iAmount)
     }
 }
 
+// Main function
 int main()
 {
 	int iAmount;
