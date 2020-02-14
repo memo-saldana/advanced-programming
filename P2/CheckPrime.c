@@ -27,8 +27,13 @@ bool isPrime(int iNumber)
 
 int main()
 {
-    if(isPrime(10))
-        printf("Prime");
+    int iNumber;
+
+    printf("Input number to check if it is prime:\n");
+    scanf("%d", &iNumber);
+
+    if(isPrime(iNumber))
+        printf("The number is prime.");
 	else
-		printf("Not prime");
+		printf("The number is not prime.");
 }
