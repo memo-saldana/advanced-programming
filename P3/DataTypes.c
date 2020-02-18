@@ -10,29 +10,29 @@
 #include <string.h>
 
 int main() {
-  int integer;
-  char character;
-  double decimal;
-  char decimalMessage[200]="Your double %lf storage size is %i bytes, but I";
-  
-  // Build long message, to comply with line lenght standard
-  strcat(decimalMessage, " can read any number from %.10e to %.10e");
-  strcat(decimalMessage, " in this data type.\n");
-  
-  // Input data
-  printf("Input an integer:\n");
-  scanf("%d", &integer);
-  printf("Input a character:\n");
-  scanf(" %c", &character);
-  printf("Input a double:\n");
-  scanf("%lf", &decimal);
+    int integer;
+    char character;
+    double decimal;
+    char decimalMessage[200]="Your double %lf storage size is %i bytes, but I";
 
-  // Output sizes
-  printf("Your integer %d storage size is %i bytes.\n", integer, sizeof(integer));
-  printf("Your char %c storage size is %i bytes. And it can read as %c or as %d.\n",
-    character, sizeof(character), character, character);
-  printf( decimalMessage, 
-    decimal, sizeof(decimal), DBL_MIN, DBL_MAX);
+    // Build long message, to comply with line lenght standard
+    strcat(decimalMessage, " can read any number from %.10e to %.10e");
+    strcat(decimalMessage, " in this data type.\n");
 
-  return 0;
+    // Input data
+    printf("Input an integer:\n");
+    scanf("%d", &integer);
+    printf("Input a character:\n");
+    scanf(" %c", &character);
+    printf("Input a double:\n");
+    scanf("%lf", &decimal);
+
+    // Output sizes
+    printf("Your integer %d storage size is %i bytes.\n", integer, sizeof(integer));
+    printf("Your char %c storage size is %i bytes. And it can read as %c or as %d.\n",
+        character, sizeof(character), character, character);
+    printf( decimalMessage,
+        decimal, sizeof(decimal), DBL_MIN, DBL_MAX);
+
+    return 0;
 }
