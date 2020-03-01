@@ -117,13 +117,13 @@ void printTextList(struct TextList list) {
 
 // Print agent information
 void printAgent(struct Agent agent) {
-	printf("\nAgent: \n");
+	printf("\nAgente: \n");
 	printf("ID: %d\n", agent.ID);
-    printf("Name: %s\n", agent.name);
-    printf("Last name: %s\n", agent.lastName);
-    printf("Age: %d\n", agent.age);
+  	printf("Nombre: %s\n", agent.name);
+    printf("Apellido: %s\n", agent.lastName);
+    printf("Edad: %d\n", agent.age);
     
-	printf("Actives:\n");
+	printf("Activos:\n");
 	if(agent.actives.head == NULL) {
 		printf("\tNo se registraron activos para este agente.\n");
 	}
@@ -131,7 +131,7 @@ void printAgent(struct Agent agent) {
 		printTextList(agent.actives);
 	}
 
-    printf("Missions:\n");
+	printf("Misiones:\n");
 	if(agent.missions.head == NULL) {
 		printf("\tNo se registraron misiones para este agente.\n");
 	}
