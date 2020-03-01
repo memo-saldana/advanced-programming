@@ -239,7 +239,8 @@ int main() {
 		printf("3. Revelar las identidades de los agentes.\n");
 		printf("4. Salir del sistema.\n\n");
 		
-		scanf("%d", &option);
+		scanf("%s", temp);
+		option = atoi(temp);
 
 		switch (option)
 		{
