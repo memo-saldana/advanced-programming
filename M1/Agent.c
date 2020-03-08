@@ -1,9 +1,9 @@
 //
 // Author: José Guillermo Saldaña Cardenas
 // ID: A01039888
-// Date: 26/02/2020
+// Date: 8/03/2020
 //
-// Save agents' information on a structure
+// Save agents' information on a structure, with encryption using a password
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
