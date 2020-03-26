@@ -1,7 +1,7 @@
-  //
+//
 // Author: José Guillermo Saldaña Cárdenas
 // ID: A01039888
-// Date: 18/02/2020
+// Date: 10/03/2020
 //
 // Display the storage size of an integer, character in both letter and number,
 // and double, as well as the upper and lower limits of the double
@@ -29,7 +29,7 @@ int main() {
     printf("Your integer %d storage size is %lu bytes.\n", d.integer, sizeof(d.integer));
     printf("Input a string:\n");
     scanf(" %s", d.characters);
-    printf("Your char %s storage size is %lu bytes.\n", d.characters, sizeof(d.characters));
+    printf("Your string %s storage size is %lu bytes.\n", d.characters, sizeof(d.characters));
     printf("Input a double:\n");
     scanf("%lf", &d.decimal);
     printf( decimalMessage,
