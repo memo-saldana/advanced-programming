@@ -3,11 +3,11 @@
 // ID: A01039888
 // Date: 23/03/2020
 //
-// Develop function to get an 
+// Develop function to save an extremely large string from console.
 #include <stdio.h>
 #include <stdlib.h>
 
-void extremlyLargeString(char *inputString, int memoryPageSize, int currentSize) {
+void extremelyLargeString(char *inputString, int memoryPageSize, int currentSize) {
 	if(inputString != NULL) {
 		int currentChar = EOF;
 		int i = 0;
@@ -30,7 +30,7 @@ int main() {
 
 	printf("Introduce un string extremadamente largo:\n");
 
-	extremlyLargeString(inputString, pageSize, pageSize);
+	extremelyLargeString(inputString, pageSize, pageSize);
 
 	printf("\nValor del string:\n%s", inputString);
 	free(inputString);

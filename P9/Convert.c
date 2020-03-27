@@ -6,6 +6,7 @@
 // Convert character arrays to numbers depending on their base
 #include <stdio.h>
 #include <stdbool.h>
+
 int asciiBinaryToInt(char *s) {
     int converted = 0;
 
