@@ -142,15 +142,22 @@ int read_int(FILE *in)
   return value;
 }
  
-void find_order(int n, FILE *out)
+void find_order(int n, FILE *in, FILE *out)
 {
   int i;
+  int temp;
   memset(cnts32,0,sizeof(cnts32));
   memset(cnts16,0,sizeof(cnts16));
   for (i=0;i<8;i++)
     memset(cnts8 + (1<<(17-i)),0,(n>>(i+1))+1);
  
-  for (i=0;i<n;i++) order[i] = read_int(); 
+  for (i=0;i<n;i++)
+  {
+    fscanf(in, "%d", &temp);
+    order[i] = temp;
+    // order[i] = read_int(in); 
+
+  }
   for (i=n-1;i>=0;--i)
     order[i] = add(i-order[i])+1;
  
@@ -195,10 +202,10 @@ int main(void) {
 
 
 		/* Change the current working directory */
-		if ((chdir("/")) < 0) {
-						/* Log the failure */
-						exit(EXIT_FAILURE);
-		}
+		// if ((chdir("/")) < 0) {
+		// 				/* Log the failure */
+		// 				exit(EXIT_FAILURE);
+		// }
 
 		/* Close out the standard file descriptors */
 		close(STDIN_FILENO);
@@ -215,12 +222,14 @@ int main(void) {
 		/* The Big Loop */
 		while (1) {
 				in = fopen("input.txt", "r");
-				out = fopen("output.txt" "w");
+				out = fopen("output.txt", "w");
 				/* Do some task here ... */
-				t = read_int(in);
+				fscanf(in, "%d", &t);
+        // t = read_int(in);
 				for (i=0;i<t;i++) {
-						n = read_int(in);
-						find_order(n, out);
+            fscanf(in, "%d", &n);
+						// n = read_int(in);
+						find_order(n, in, out);
 				}
 				fclose(in);
 				fclose(out);
