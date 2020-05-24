@@ -16,18 +16,18 @@ typedef struct myThread {
     int id;
     int time;
     int * dependents;
-    int array_size;
+    int dependentsSize;
 } myThread;
 
 pthread_t threads[NUM_THREADS];
 
 // Constructor
-myThread * Thread(int id, int time, int dependents[100], int array_size){
+myThread * Thread(int id, int time, int dependents[100], int dependentsSize){
   myThread * t = malloc(sizeof(myThread));
   t->time = time;
   t->id = id;
   t->dependents = dependents;
-  t->array_size = array_size;
+  t->dependentsSize = dependentsSize;
   return t;
 }
 
@@ -128,22 +128,24 @@ myThread * * readFileForThreads(char * file_name, int iNumberOfLines){
 // Main thread function
 void *printHello (void *threadid){
     myThread *thread = (struct myThread*)threadid;
-    printf("------Hello World! It’s me, thread #%d!------\n", thread->id);
+    printf("------Hello World! It’s me, thread #%d!------\n\n", thread->id);
 
-    printf("I (thread #%d) depend on threads ", thread->id, thread->dependents[i]);
-		for(int i = 0; i < thread->array_size; i++){
-				if( i < thread->array_size - 1) {
+    if (thread->dependentsSize > 0) {
+      printf("I (thread #%d) depend on threads ", thread->id);
+    }
+		for(int i = 0; i < thread->dependentsSize; i++){
+				if( i < thread->dependentsSize - 1) {
 					printf("#%d, ", thread->dependents[i]);
 				} else {
-					printf("and #%d.", thread->dependents[i]);
+					printf("and #%d.\n", thread->dependents[i]);
 				}
     }
 
-		for(int i = 0; i < thread->array_size; i++){
-				printf("*Thread #%d waiting for dependency #%d.*", thread->id, thread->dependents[i])
+		for(int i = 0; i < thread->dependentsSize; i++){
+				printf("*Thread #%d waiting for dependency #%d.*\n", thread->id, thread->dependents[i]);
         int e = pthread_join(threads[thread->dependents[i]-1],NULL);
 				if(e != 0) {
-					print("ERROR: return code from pthread_join() is %d\n", e);
+					printf("ERROR: return code from pthread_join() is %d\n", e);
 				}
 		}
 
